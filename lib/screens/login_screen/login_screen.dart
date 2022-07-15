@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:referral/constant.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
@@ -24,9 +24,12 @@ class _LoginPageState extends State<LoginPage> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    bool iskeyBoardActive = MediaQuery.of(context).viewInsets.bottom == 0;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
+          reverse: iskeyBoardActive ? false : true,
           child: Padding(
             padding: const EdgeInsets.all(Constant.MARGIN_WIDTH),
             child: Column(
@@ -34,23 +37,26 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: Image.asset(
-                    'assets/images/login_display.png',
-                    width: 150.0,
-                    height: 236.0,
-                    fit: BoxFit.contain,
-                  ),
+                  child: iskeyBoardActive
+                      ? Image.asset(
+                          'assets/images/login_display.png',
+                          width: 150.0,
+                          height: 236.0,
+                          fit: BoxFit.contain,
+                        )
+                      : const SizedBox(
+                          height: 46,
+                        ),
                 ),
-              const  SizedBox(
+                const SizedBox(
                   height: 46,
                 ),
-
                 const Text(
                   'User Name',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
-                      color: Colors.blue),
+                      color: Constant.PRIMARY_BLACK),
                 ),
                 const SizedBox(
                   height: 8,
@@ -72,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
-                      color: Colors.blue),
+                      color: Constant.PRIMARY_BLACK),
                 ),
                 const SizedBox(
                   height: 8,
@@ -103,39 +109,42 @@ class _LoginPageState extends State<LoginPage> {
                       //     MaterialPageRoute(
                       //         builder: (context) => RegisterPage()));
                     },
-                    child: Text('Forget Password'),
+                    child: Text(
+                      'Forget Password',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          color: Constant.PRIMARY_BLACK),
+                    ),
                   ),
                 ),
-
                 const SizedBox(
                   height: 86,
                 ),
-
                 SizedBox(
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      primary: Constant.PRIMARY_BLACK,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                             Constant.BORDER_RADIUS), // <-- Radius
                       ),
                     ),
                     onPressed: () async {},
-                    child: const Text(
+                    child: Text(
                       'Login',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.white),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                      ),
                     ),
                   ),
                 ),
-
-              const  SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
-
                 Center(
                   child: RichText(
                     text: const TextSpan(
@@ -158,7 +167,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 )
-
               ],
             ),
           ),

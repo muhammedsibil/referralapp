@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:referral/constant.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  String button = "Login";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,8 +22,13 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 26,
+                Center(
+                  child: Image.asset(
+                    'assets/images/prospello_logo.png',
+                    width: 146,
+                    height: 50,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 Center(
                   child: Image.asset(
@@ -40,31 +51,40 @@ class WelcomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                Text('To Prospello Global'),
+                const Text('To Prospello Global'),
                 const SizedBox(
                   height: 4,
                 ),
                 const Text('A New Globe Of Endless Oppurtunities'),
                 const SizedBox(
-                  height: 86,
+                  height: 100,
                 ),
                 Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                Constant.BORDER_RADIUS), // <-- Radius
-                          ),
-                        ),
-                        onPressed: () async {},
+                      child: MaterialButton(
+                        height: 50.0,
+                        color: button == "Login" ? Colors.black : Colors.white,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1.5),
+                            borderRadius:
+                                BorderRadius.circular(Constant.BORDER_RADIUS)),
+                        textColor:
+                            button == "Login" ? Colors.white : Colors.black,
+                        // textColor:
+
+                        onPressed: () async {
+                          setState(() {
+                            button = "Login";
+                          });
+                        },
+                        splashColor: Colors.redAccent,
                         child: const Text(
                           'Login',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
-                              color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
                       ),
                     ),
@@ -72,20 +92,29 @@ class WelcomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                Constant.BORDER_RADIUS), // <-- Radius
-                          ),
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          side: const BorderSide(width: 1.5),
+                          borderRadius:
+                              BorderRadius.circular(Constant.BORDER_RADIUS),
                         ),
-                        onPressed: () async {},
+                        height: 50.0,
+                        color:
+                            button == "Register" ? Colors.black : Colors.white,
+                        textColor:
+                            button == "Register" ? Colors.white : Colors.black,
+                        onPressed: () async {
+                          setState(() {
+                            button = "Register";
+                          });
+                        },
+                        splashColor: Colors.redAccent,
                         child: const Text(
-                          'Sign Up',
+                          "Register",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
-                              color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
                       ),
                     ),
