@@ -2,25 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:referral/constant.dart';
 import 'package:referral/screens/signup_screen/signup_form_widget.dart';
 
-class SignupScreen extends StatefulWidget {
+class SignupScreen extends StatelessWidget{
   const SignupScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SignupScreen> createState() => _SignupScreenState();
-}
 
-class _SignupScreenState extends State<SignupScreen> {
-  TextEditingController emailController = TextEditingController();
 
-  TextEditingController passwordController = TextEditingController();
-
-  @override
-  void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-
-    super.dispose();
-  }
 
   // This widget is the root of your application.
   @override
@@ -39,20 +25,30 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Center(
+                  signupDisplayImageWidget(),
+                 const Spacer(),
+                  const SignupFormWidget(),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  signUpButtton(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+ Widget signupDisplayImageWidget() => Center(
                       child: Image.asset(
                     'assets/images/signup_display.png',
                     // width: 374.0,
 
                     // height: 290.0,
                     fit: BoxFit.cover,
-                  )),
-                  Spacer(),
-                  const SignupFormWidget(),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  SizedBox(
+                  ),);
+  Widget signUpButtton()   => SizedBox(
                     height: 50,
                     width: double.infinity,
                     child: ElevatedButton(
@@ -63,7 +59,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               Constant.BORDER_RADIUS), // <-- Radius
                         ),
                       ),
-                      onPressed: () async {},
+                      onPressed: ()  {},
                       child: const Text(
                         'Register',
                         style: TextStyle(
@@ -72,13 +68,5 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+                  );
 }
