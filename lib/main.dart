@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:referral/screens/welcome_screen/welcome_screen.dart';
+import 'screens/welcome_screen/welcome_screen.dart';
 
 import 'screens/login_screen/login_screen.dart';
+import 'screens/signup_screen/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +19,10 @@ class MyApp extends StatelessWidget {
        
         primarySwatch: Colors.blue,
       ),
-      home:  WelcomeScreen(),
+      // home:  WelcomeScreen(),
       // home: const WelcomeScreen(),
+      home: SignupScreen(),
+      // home: MyWidget(),
     );
   }
 }

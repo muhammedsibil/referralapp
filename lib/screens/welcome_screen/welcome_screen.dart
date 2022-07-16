@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:referral/constant.dart';
+import 'package:referral/screens/login_screen/login_screen.dart';
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  String button = "Login";
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
+
           child: Padding(
             padding: const EdgeInsets.all(Constant.MARGIN_WIDTH),
             child: Column(
@@ -64,21 +59,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Expanded(
                       child: MaterialButton(
                         height: 50.0,
-                        color: button == "Login" ? Colors.black : Colors.white,
+                        color: Colors.black,
                         shape: RoundedRectangleBorder(
                             side: BorderSide(width: 1.5),
                             borderRadius:
                                 BorderRadius.circular(Constant.BORDER_RADIUS)),
-                        textColor:
-                            button == "Login" ? Colors.white : Colors.black,
+                        textColor: Colors.white,
                         // textColor:
 
                         onPressed: () async {
-                          setState(() {
-                            button = "Login";
-                          });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginScreen()),
+                          );
                         },
-                        splashColor: Colors.redAccent,
                         child: const Text(
                           'Login',
                           style: TextStyle(
@@ -99,16 +94,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               BorderRadius.circular(Constant.BORDER_RADIUS),
                         ),
                         height: 50.0,
-                        color:
-                            button == "Register" ? Colors.black : Colors.white,
-                        textColor:
-                            button == "Register" ? Colors.white : Colors.black,
-                        onPressed: () async {
-                          setState(() {
-                            button = "Register";
-                          });
-                        },
-                        splashColor: Colors.redAccent,
+                        color: Colors.white,
+                        textColor: Colors.black,
+                        onPressed: () async {},
                         child: const Text(
                           "Register",
                           style: TextStyle(
@@ -144,7 +132,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
