@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:referral/constant.dart';
+import 'screens/home_screen/homescreen.dart';
 import 'screens/welcome_screen/welcome_screen.dart';
 
 import 'screens/login_screen/login_screen.dart';
@@ -15,17 +17,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+          theme:  ThemeData(scaffoldBackgroundColor: Constant.PRIMARY_WHITE),
+
+      // theme: ThemeData(
        
-        primarySwatch: Colors.blue,
-      ),
+      //   primarySwatch: Colors.blue,
+      // ),
       // home:  WelcomeScreen(),
       // home: const WelcomeScreen(),
-      home: SignupScreen(),
+      home: HomeScreen(),
       // home: MyWidget(),
     );
   }
 }
-
-
-

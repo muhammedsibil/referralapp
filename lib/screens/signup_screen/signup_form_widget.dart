@@ -10,7 +10,6 @@ class SignupFormWidget extends StatefulWidget {
 }
 
 class _SignupFormWidgetState extends State<SignupFormWidget> {
-  
   TextEditingController name = TextEditingController();
   TextEditingController phoneNumber = TextEditingController();
   TextEditingController passwordController = TextEditingController();
