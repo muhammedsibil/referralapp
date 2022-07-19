@@ -63,6 +63,17 @@ flutter:
    - assets/images/welcome_display.png
    - assets/images/login_display.png
    - assets/images/signup_display.png
+   - assets/images/my_earnings.png
+   - assets/images/my_projects.png
+   - assets/images/appointment.png
+   - assets/images/chat_with_team.png
+   - assets/images/interview.png
+   - assets/images/refer_a_sale.png
+
+
+
+
+
   #  - assets/images/home_screen_display.png
 
 

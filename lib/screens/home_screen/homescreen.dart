@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:referral/screens/home_screen/interview_widget.dart';
 
 import '../../constant.dart';
+import 'quick_access_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,25 +10,32 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
-    print(screenHeight);
+    // print(screenHeight);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(children: [
-            SizedBox(
-              height: screenHeight / 15.2,
-            ),
-            welcomeWidget(),
-            SizedBox(
-              height: screenHeight / 13.5,
-            ),
-            searchWidget(),
-           const SizedBox(
-              height: 20,
-            ),
-            InterviewWidget(),
-          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: screenHeight / 15.2,
+              ),
+              welcomeWidget(),
+              SizedBox(
+                height: screenHeight / 13.5,
+              ),
+              searchWidget(),
+              const SizedBox(
+                height: 20,
+              ),
+              InterviewWidget(),
+             const SizedBox(
+                height: 36,
+              ),
+              QuickAccessWidget(),
+              
+            ],
           ),
         ),
       ),
@@ -45,15 +53,15 @@ class HomeScreen extends StatelessWidget {
                 height: 62,
                 fit: BoxFit.contain,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               RichText(
                 text: const TextSpan(
                   text: 'Hi Fadhil,\n',
                   style: TextStyle(
+                    height: 1.0,
                     fontSize: 26,
-                    fontFamily: 'Your App Font Family',
                     color: Constant.PRIMARY_BLACK,
                   ),
                   children: [

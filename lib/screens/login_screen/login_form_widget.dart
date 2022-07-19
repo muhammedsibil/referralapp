@@ -24,8 +24,8 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-       mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         headingWidget("Username"),
         const SizedBox(
@@ -39,8 +39,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         const SizedBox(
           height: 8,
         ),
-                textFieldWidget(userNameController),
-
+        textFieldWidget(passwordController),
       ],
     );
   }

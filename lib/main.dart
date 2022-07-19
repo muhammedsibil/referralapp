@@ -15,9 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Flutter Demo',
-          theme:  ThemeData(scaffoldBackgroundColor: Constant.PRIMARY_WHITE),
+          theme:  ThemeData(
+            fontFamily: 'Poppins',
+            scaffoldBackgroundColor: Constant.PRIMARY_WHITE),
 
       // theme: ThemeData(
        
@@ -25,6 +28,7 @@ class MyApp extends StatelessWidget {
       // ),
       // home:  WelcomeScreen(),
       // home: const WelcomeScreen(),
+
       home: HomeScreen(),
       // home: MyWidget(),
     );
