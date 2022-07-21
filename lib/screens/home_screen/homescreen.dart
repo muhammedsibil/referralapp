@@ -29,11 +29,11 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              InterviewWidget(),
+             const InterviewWidget(),
              const SizedBox(
                 height: 36,
               ),
-              QuickAccessWidget(),
+             const QuickAccessWidget(),
               
             ],
           ),

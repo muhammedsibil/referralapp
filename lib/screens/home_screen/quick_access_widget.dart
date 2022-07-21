@@ -17,7 +17,7 @@ class QuickAccessWidget extends StatelessWidget {
           child: Text(
             "Quick Access",
             style: TextStyle(
-              fontWeight: Constant.SEMI_BOLD,
+              fontWeight: Constant.FONT_WEIGHT_SEMI_BOLD,
               color: Colors.black,
               fontSize: 18,
             ),

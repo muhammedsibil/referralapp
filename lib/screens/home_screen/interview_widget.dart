@@ -34,7 +34,7 @@ class InterviewWidget extends StatelessWidget {
                     'Prospello',
                     style: TextStyle(
                         fontSize: 14,
-                        fontWeight: Constant.SEMI_BOLD,
+                        fontWeight: Constant.FONT_WEIGHT_SEMI_BOLD,
                         color: Constant.PRIMARY_WHITE,
                         fontFamily: 'Poppins'),
                   ),
@@ -42,7 +42,7 @@ class InterviewWidget extends StatelessWidget {
                     'Technologies',
                     style: TextStyle(
                         fontSize: 14,
-                        fontWeight: Constant.SEMI_BOLD,
+                        fontWeight: Constant.FONT_WEIGHT_SEMI_BOLD,
                         color: Constant.PRIMARY_LIGHT_BLACK,
                         fontFamily: 'Poppins'),
                   ),
