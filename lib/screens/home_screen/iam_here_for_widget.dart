@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../../constant.dart';
 
-class QuickAccessWidget extends StatelessWidget {
-  const QuickAccessWidget({Key? key}) : super(key: key);
+class IamHereForWidget extends StatelessWidget {
+  const IamHereForWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,41 +15,27 @@ class QuickAccessWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Quick Access",
+              "Iam Here for",
               style: TextStyle(
                 fontWeight: Constant.FONT_WEIGHT_SEMI_BOLD,
                 color: Color(0xFF000000),
                 fontSize: 18,
               ),
             ),
-            const SizedBox(height: 14),
-            imageText(
-              screenWidth,
-              164,
-              'assets/images/my_earnings.png',
-              'My Earnings',
-              Constant.PRIMARY_WHITE,
+            const SizedBox(
+              height: 14,
             ),
-            const SizedBox(height: 20),
-            imageText(screenWidth, 240, 'assets/images/my_projects.png',
-                'My Projects', Constant.PRIMARY_BLACK)
-          ],
-        ),
-        const SizedBox(width: 20),
-        Column(
-          children: [
-            const Text(
-              "",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+            Row(
+              children: [
+                imageText(screenWidth, 270, 'assets/images/interview.png',
+                    'Interview', Constant.PRIMARY_WHITE),
+                const SizedBox(width: 20),
+
+                // Spacer(),
+                imageText(screenWidth, 270, 'assets/images/appointment.png',
+                    'Appoinment', Constant.PRIMARY_WHITE),
+              ],
             ),
-            const SizedBox(height: 14),
-            imageText(screenWidth, 240, 'assets/images/refer_a_sale.png',
-                'Refer a Sale', Constant.PRIMARY_BLACK),
-            const SizedBox(height: 20),
-            imageText(screenWidth, 164, 'assets/images/chat_with_team.png',
-                'Chat With Team ', Constant.PRIMARY_WHITE)
           ],
         ),
       ],
@@ -84,8 +69,8 @@ class QuickAccessWidget extends StatelessWidget {
             children: [
               Image.asset(
                 image,
-                height: height == 240 ? 166 : 70,
-                width: height == 240 ? 110 : 70,
+                height: height == 270 ? 166 : 70,
+                width: height == 270 ? 110 : 70,
                 // fit: BoxFit.fill,
               ),
               const SizedBox(

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../constant.dart';
 
-class InterviewWidget extends StatelessWidget {
-  const InterviewWidget({Key? key}) : super(key: key);
+class NotificationWidget extends StatelessWidget {
+  const NotificationWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    print(screenWidth);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -15,6 +17,7 @@ class InterviewWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(24),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,34 +66,50 @@ class InterviewWidget extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            dateTimeWidget(Icons.calendar_today_outlined, "November 17"),
-            dateTimeWidget(Icons.calendar_today_outlined, "3:00 pm"),
-            dateTimeWidget(Icons.calendar_today_outlined, "offline"),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            dateTimeWidget(
+                screenWidth, Icons.calendar_today_outlined, "November 7"),
+            const SizedBox(
+              width: 10,
+            ),
+            dateTimeWidget(
+                screenWidth, Icons.calendar_today_outlined, "3:00 pm"),
+            const SizedBox(
+              width: 10,
+            ),
+            dateTimeWidget(
+                screenWidth, Icons.calendar_today_outlined, "offline"),
           ]),
         ],
       ),
     );
   }
 
-  Widget dateTimeWidget(IconData icon, String text) => Row(
-        children: [
-          Icon(
-            icon,
-            color: Constant.PRIMARY_LIGHT_BLACK,
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(
-            text,
-            maxLines: 1,
-            style: const TextStyle(
-                overflow: TextOverflow.ellipsis,
-                fontSize: 14,
-                color: Constant.PRIMARY_WHITE,
-                fontFamily: 'Poppins'),
-          ),
-        ],
+  Widget dateTimeWidget(screenWidth, IconData icon, String text) => Expanded(
+        child: Row(
+          // mainAxisSize:MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: Constant.PRIMARY_LIGHT_BLACK,
+              size: 14,
+            ),
+            const SizedBox(
+              width: 4,
+            ),
+            Expanded(
+              child: Text(
+                text,
+                maxLines: 1,
+                softWrap: true,
+                style: TextStyle(
+                    overflow: TextOverflow.visible,
+                    fontSize: screenWidth / 30,
+                    color: Constant.PRIMARY_WHITE,
+                    fontFamily: 'Poppins'),
+              ),
+            ),
+          ],
+        ),
       );
 }

@@ -61,6 +61,7 @@ flutter:
   assets:
    - assets/images/prospello_logo.png
    - assets/images/welcome_display.png
+   - assets/images/welcome_logo.png
    - assets/images/login_display.png
    - assets/images/signup_display.png
    - assets/images/my_earnings.png

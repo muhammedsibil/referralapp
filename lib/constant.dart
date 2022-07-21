@@ -7,6 +7,10 @@ class Constant {
   static const Color PRIMARY_WHITE = Color(0xffffffff);
   static const Color PRIMARY_BLACK = Color(0xff202020);
   static const Color PRIMARY_LIGHT_BLACK = Color(0xffa2a2a2);
+    static const Color SHADOW_COLOR = Color(0xff26000000);
+
   static const Color FILLCOLOR = Color(0xfff2f2f2);
   static const FontWeight FONT_WEIGHT_SEMI_BOLD = FontWeight.w600;
+    static const FontWeight FONT_WEIGHT_MEDIUM = FontWeight.w500;
+
 }
