@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:referral/screens/home_screen/iam_here_for_widget.dart';
 import 'package:referral/screens/home_screen/interview_widget.dart';
 import 'package:referral/screens/home_screen/search_widget.dart';
@@ -36,20 +37,20 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SearchWidget(),
-                  const SizedBox(
+                children: const [
+                  SearchWidget(),
+                  SizedBox(
                     height: 20,
                   ),
-                  const NotificationWidget(),
-                  const SizedBox(
+                  NotificationWidget(),
+                  SizedBox(
                     height: 36,
                   ),
-                  const QuickAccessWidget(),
-                  const SizedBox(
+                  QuickAccessWidget(),
+                  SizedBox(
                     height: 30,
                   ),
-                  const IamHereForWidget(),
+                  IamHereForWidget(),
                 ],
               ),
             ),
