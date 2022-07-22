@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:referral/constant.dart';
+import 'package:referral/screens/my_earnings/my_earnings.dart';
 import 'screens/home_screen/homescreen.dart';
 import 'screens/welcome_screen/welcome_screen.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       // home:  WelcomeScreen(),
       // home: const WelcomeScreen(),
 
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      home: MyEarnings(),
       // home: MyWidget(),
     );
   }

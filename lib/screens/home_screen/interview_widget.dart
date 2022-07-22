@@ -79,7 +79,8 @@ class NotificationWidget extends StatelessWidget {
             ),
             dateTimeWidget(
                 screenWidth, Icons.calendar_today_outlined, "offline"),
-          ]),
+          ],
+          ),
         ],
       ),
     );
